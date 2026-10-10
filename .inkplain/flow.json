@@ -44,12 +44,13 @@
     },
     "inkp": {
       "status": "done",
-      "summary": "Five-tab .inkp created on final main, each STEP tab linked to its source-derived executor component docs; get_inkp_summary confirms exactly STEP-1..STEP-5 and zero missing linked executor documents. Repo stage remains in progress separately for ancestry/CI.",
+      "summary": "Regenerated five-step .inkp from the rebuilt source-derived STEP CRDs, verified STEP-1..STEP-5 diagrams with node counts 2/3/4/6/6 and zero missing linked executor documents. Simulator now follows real document classification code.",
       "outputs": {
         "inkp_path": "ai-document-classification-service.inkp",
         "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/blob/main/ai-document-classification-service.inkp",
         "tabs": 5,
-        "missing_links": 0
+        "missing_links": 0,
+        "source_revision": "8c3783b8749506e8a28db72a27f9a8ae325a72d5"
       },
       "started_at": "2026-10-10T15:05:19.857Z",
       "finished_at": "2026-10-10T15:05:19.857Z",
@@ -69,5 +70,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T16:03:07.801Z"
+  "updated_at": "2026-10-10T16:03:18.739Z"
 }
