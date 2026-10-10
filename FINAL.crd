@@ -1,10 +1,10 @@
 {
   "crd_version": 1,
-  "name": "ai-document-classification-service STEP-5",
+  "name": "ai-document-classification-service — FINAL",
   "description": "Verify safety and error tests",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
-    "revision": "step-05-verify-safety-and-error-tests",
+    "revision": "main",
     "roots": {
       "backend": "app"
     },
@@ -13,11 +13,11 @@
     ]
   },
   "step": {
-    "no": 5,
+    "no": "final",
     "of": 5,
-    "title": "Verify safety and error tests",
-    "branch": "step-05-verify-safety-and-error-tests",
-    "previous": "STEP-4.crd",
+    "title": "Final synthetic teaching implementation",
+    "branch": "main",
+    "previous": "STEP-5.crd",
     "removed": []
   },
   "flows": [
@@ -34,7 +34,7 @@
       "kind": "function",
       "side": "backend",
       "layer": "door",
-      "step_change": "changed",
+      "step_change": "unchanged",
       "source": {
         "file": "app/main.py",
         "symbol": "process"
@@ -119,7 +119,7 @@
       "kind": "function",
       "side": "backend",
       "layer": "service",
-      "step_change": "added",
+      "step_change": "unchanged",
       "source": {
         "file": "app/features/step_5.py",
         "symbol": "transform"

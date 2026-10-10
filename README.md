@@ -1,18 +1,15 @@
-# AI Document Classification Service
+# ai-document-classification-service
 
-An offline AI document triage service validates and extracts synthetic PDF/TXT, classifies into typed categories, flags uncertainty and stores outcomes.
+Inkplain FDE Starter learning repository. Five STEP branches introduce capabilities in sequence. Each STEP-N branch includes its own CRD, teaching notes and synthetic source. The final main branch contains the STEP-5 implementation.
 
-An Inkplain practical case: a real project built step by step.
-
-## How this repository works
-
-Every step of the lesson has its own branch, and each one contains all steps up to it:
+## Local run
 
 ```bash
-git clone https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service.git
-cd practical--ai-document-classification-service
-git branch -r            # list the step branches
-git checkout step-01-…   # code after step 1
+pip install -r requirements.txt
+pytest -q
+uvicorn app.main:app --reload
 ```
 
-`main` holds the final, complete version.
+**Caution:** This is a mock training implementation, not a production-grade integration. Real security controls, data storage and external provider implementations need further engineering and QA.
+
+The canonical complete design is FINAL.crd. Simulator export and portal lessons are tracked separately in the Inkplain Case Flow.
