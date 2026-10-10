@@ -1,0 +1,67 @@
+{
+  "crd_version": 1,
+  "name": "ai-document-classification-service STEP-2",
+  "description": "Extract PDF and text content",
+  "source": {
+    "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
+    "revision": "step-02-extract-pdf-and-text-content",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "step": {
+    "no": 2,
+    "of": 5,
+    "title": "Extract PDF and text content",
+    "branch": "step-02-extract-pdf-and-text-content",
+    "previous": "STEP-1.crd",
+    "removed": []
+  },
+  "flows": [
+    {
+      "id": "request",
+      "name": "Synthetic request",
+      "entry": "be.process"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.process",
+      "name": "process",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "step_change": "changed",
+      "source": {
+        "file": "app/main.py",
+        "symbol": "process"
+      },
+      "operations": [
+        {
+          "id": "op-2",
+          "title": "Invoke step 2",
+          "calls": {
+            "to": "be.step_2",
+            "type": "call"
+          }
+        }
+      ]
+    },
+    {
+      "id": "be.step_2",
+      "name": "transform_2",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "added",
+      "source": {
+        "file": "app/features/step_2.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    }
+  ]
+}
