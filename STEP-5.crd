@@ -1,0 +1,130 @@
+{
+  "crd_version": 1,
+  "name": "ai-document-classification-service STEP-5",
+  "description": "Verify safety and error tests",
+  "source": {
+    "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
+    "revision": "step-05-verify-safety-and-error-tests",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "step": {
+    "no": 5,
+    "of": 5,
+    "title": "Verify safety and error tests",
+    "branch": "step-05-verify-safety-and-error-tests",
+    "previous": "STEP-4.crd",
+    "removed": []
+  },
+  "flows": [
+    {
+      "id": "request",
+      "name": "Synthetic request",
+      "entry": "be.process"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.process",
+      "name": "process",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "step_change": "changed",
+      "source": {
+        "file": "app/main.py",
+        "symbol": "process"
+      },
+      "operations": [
+        {
+          "id": "op-2",
+          "title": "Invoke step 2",
+          "calls": {
+            "to": "be.step_2",
+            "type": "call"
+          }
+        },
+        {
+          "id": "op-3",
+          "title": "Invoke step 3",
+          "calls": {
+            "to": "be.step_3",
+            "type": "call"
+          }
+        },
+        {
+          "id": "op-4",
+          "title": "Invoke step 4",
+          "calls": {
+            "to": "be.step_4",
+            "type": "call"
+          }
+        },
+        {
+          "id": "op-5",
+          "title": "Invoke step 5",
+          "calls": {
+            "to": "be.step_5",
+            "type": "call"
+          }
+        }
+      ]
+    },
+    {
+      "id": "be.step_2",
+      "name": "transform_2",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "unchanged",
+      "source": {
+        "file": "app/features/step_2.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    },
+    {
+      "id": "be.step_3",
+      "name": "transform_3",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "unchanged",
+      "source": {
+        "file": "app/features/step_3.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    },
+    {
+      "id": "be.step_4",
+      "name": "transform_4",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "unchanged",
+      "source": {
+        "file": "app/features/step_4.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    },
+    {
+      "id": "be.step_5",
+      "name": "transform_5",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "added",
+      "source": {
+        "file": "app/features/step_5.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    }
+  ]
+}
