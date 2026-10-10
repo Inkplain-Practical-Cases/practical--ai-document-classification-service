@@ -1,0 +1,105 @@
+{
+  "crd_version": 1,
+  "name": "AI Document Classification Service STEP-1",
+  "description": "Cumulative offline document triage, source-derived contracts",
+  "source": {
+    "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
+    "revision": "step-01-validate-document-upload",
+    "roots": {
+      "backend": "app"
+    },
+    "stacks": [
+      "python-fastapi"
+    ]
+  },
+  "step": {
+    "no": 1,
+    "of": 5,
+    "title": "Validate document upload",
+    "branch": "step-01-validate-document-upload",
+    "previous": null,
+    "removed": []
+  },
+  "flows": [
+    {
+      "id": "classification",
+      "name": "Classify document",
+      "entry": "be.classify_document"
+    }
+  ],
+  "components": [
+    {
+      "id": "be.classify_document",
+      "name": "classify_document",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "Accept multipart upload, dispatch to the document service and expose a typed HTTP result.",
+      "flows": [
+        "classification"
+      ],
+      "step_change": "added",
+      "source": {
+        "file": "app/main.py",
+        "symbol": "classify_document"
+      },
+      "inputs": [
+        {
+          "name": "document",
+          "description": "Synthetic input or validated service arguments"
+        }
+      ],
+      "validations": [
+        "Reject malformed, unauthorized or out-of-bound input before side effects"
+      ],
+      "operations": [
+        {
+          "id": "call-be-validate_document",
+          "title": "Call be.validate_document",
+          "calls": {
+            "to": "be.validate_document",
+            "type": "call"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "description": "Typed local result or a specific validation failure"
+        }
+      ]
+    },
+    {
+      "id": "be.validate_document",
+      "name": "validate_document",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Reject unsafe size, extension and PDF-signature inputs before processing.",
+      "flows": [
+        "classification"
+      ],
+      "step_change": "added",
+      "source": {
+        "file": "app/document_service.py",
+        "symbol": "validate_document"
+      },
+      "inputs": [
+        {
+          "name": "document",
+          "description": "Synthetic input or validated service arguments"
+        }
+      ],
+      "validations": [
+        "Reject malformed, unauthorized or out-of-bound input before side effects"
+      ],
+      "operations": [],
+      "outputs": [
+        {
+          "name": "result",
+          "description": "Typed local result or a specific validation failure"
+        }
+      ]
+    }
+  ]
+}
