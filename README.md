@@ -1,18 +1,21 @@
 # AI Document Classification Service
 
-An offline AI document triage service validates and extracts synthetic PDF/TXT, classifies into typed categories, flags uncertainty and stores outcomes.
+Offline, synthetic FastAPI learning service with deterministic document triage.
 
-An Inkplain practical case: a real project built step by step.
-
-## How this repository works
-
-Every step of the lesson has its own branch, and each one contains all steps up to it:
+## Run locally
 
 ```bash
-git clone https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service.git
-cd practical--ai-document-classification-service
-git branch -r            # list the step branches
-git checkout step-01-…   # code after step 1
+python -m pip install -r requirements.txt
+uvicorn app.main:app --reload
+python -m pytest -q
 ```
 
-`main` holds the final, complete version.
+POST a synthetic PDF or UTF-8 TXT file to `/documents/classify` (multipart field `file`).
+The response includes a label, confidence and review_required flag. Classification uses
+explicit keyword rules, **not an LLM**. Only a content SHA-256 digest and decision metadata
+are stored in SQLite (`DOCUMENT_DB`); source text and file bytes are not persisted.
+
+Limits: 2 MiB input, 30 PDF pages, 150k characters extracted. PDFs must have
+extractable text (no OCR). This is a teaching baseline, not a malware-hardened
+untrusted PDF sandbox. Existing STEP branches are historical lessons and need
+cumulative ancestry repair before the full case is published.
