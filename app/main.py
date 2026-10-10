@@ -8,6 +8,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from app.document_service import MAX_BYTES, validate_document
 from app.document_service import extract
 from app.document_service import classify
+from app.document_service import process_document
 
 app = FastAPI(title="AI Document Classification Service")
 
@@ -22,12 +23,11 @@ async def classify_document(file: UploadFile = File(...)) -> dict:
     raw = await file.read(MAX_BYTES + 1)
     await file.close()
     try:
-        text = extract(file.filename or "", raw)
-        label, confidence = classify(text)
-        return {
-            "stage": 3, "text_length": len(text), "label": label,
-            "confidence": confidence, "review_required": confidence < 0.75,
-        }
+        decision = process_document(
+            file.filename or "", raw,
+            os.environ.get("DOCUMENT_DB", "/tmp/inkplain-documents.sqlite3"),
+        )
+        return vars(decision)
     except ValueError as exc:
         # Public contract exposes a safe validation error, not a stack trace.
         raise HTTPException(status_code=422, detail=str(exc)) from exc

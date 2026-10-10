@@ -73,3 +73,39 @@ def classify(text: str) -> tuple[str, float]:
         return "general", 0.40
     return label, min(0.95, 0.65 + 0.10 * (hits[label] - 1))
 
+# STEP-4: metadata storage and review flag, without original document content.
+@dataclass(frozen=True)
+class Decision:
+    id: str
+    label: str
+    confidence: float
+    review_required: bool
+    text_length: int
+
+def persist(path: str, decision: Decision, digest: str) -> None:
+    """Store a decision transactionally and exclude uploaded text and bytes."""
+    with sqlite3.connect(path, timeout=5) as connection:
+        connection.execute(
+            "CREATE TABLE IF NOT EXISTS decisions ("
+            "id TEXT PRIMARY KEY, sha256 TEXT NOT NULL, label TEXT NOT NULL, "
+            "confidence REAL NOT NULL, review_required INTEGER NOT NULL, "
+            "text_length INTEGER NOT NULL)"
+        )
+        connection.execute(
+            "INSERT INTO decisions VALUES (?,?,?,?,?,?)",
+            (decision.id, digest, decision.label,
+             decision.confidence, int(decision.review_required),
+             decision.text_length),
+        )
+
+def process_document(filename: str, content: bytes, database: str) -> Decision:
+    """Extract, classify and store one document decision in the offline database."""
+    text = extract(filename, content)
+    label, confidence = classify(text)
+    result = Decision(
+        id=str(uuid.uuid4()), label=label, confidence=confidence,
+        review_required=confidence < 0.75, text_length=len(text),
+    )
+    persist(database, result, hashlib.sha256(content).hexdigest())
+    return result
+
