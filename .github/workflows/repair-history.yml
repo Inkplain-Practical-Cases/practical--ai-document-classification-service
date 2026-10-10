@@ -1,0 +1,81 @@
+name: Repair cumulative STEP history
+on:
+  push:
+    paths:
+      - .github/workflows/repair-history.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: repair-document-classification-history
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild all five branches with backups, tests and lease checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Inkplain Learning Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          branches=(
+            step-01-validate-document-upload
+            step-02-extract-pdf-and-text-content
+            step-03-classify-with-offline-provider
+            step-04-store-label-and-review-decisions
+            step-05-verify-safety-and-error-tests
+          )
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+          original_main="$(git rev-parse refs/remotes/origin/main)"
+          original=()
+          for b in "${branches[@]}"; do original+=("$(git rev-parse "refs/remotes/origin/$b")"); done
+          echo "Original main: $original_main"
+          for idx in "${!branches[@]}"; do
+            echo "${branches[$idx]}: ${original[$idx]}"
+          done
+          # Test before moving any live reference. Backup pushes are performed only after all tests pass.
+          rebuilt=("${original[0]}")
+          parent="${original[0]}"
+          for idx in 1 2 3 4; do
+            b="${branches[$idx]}"
+            git checkout --detach --force "$parent"
+            git read-tree --reset -u "refs/remotes/origin/$b"
+            git add -A
+            git commit --allow-empty -m "Rebuild cumulative STEP-$((idx+1)) from STEP-$idx snapshot"
+            parent="$(git rev-parse HEAD)"
+            rebuilt+=("$parent")
+            echo "Validating $b"
+            python -m pip install --quiet -r requirements.txt
+            python -m pytest -q
+          done
+          git checkout --detach --force "$parent"
+          git read-tree --reset -u "$original_main"
+          git add -A
+          git commit --allow-empty -m "Main: final validated document classifier based on STEP-5"
+          new_main="$(git rev-parse HEAD)"
+          python -m pip install --quiet -r requirements.txt
+          python -m pytest -q
+          # Preserve all original heads before rewriting anything.
+          for idx in "${!branches[@]}"; do
+            git push origin "${original[$idx]}:refs/heads/backup-20261010-document-${branches[$idx]}"
+          done
+          git push origin "$original_main:refs/heads/backup-20261010-document-main"
+          # All refs are moved atomically and only if the expected old heads remain unchanged.
+          arguments=()
+          for idx in "${!branches[@]}"; do
+            b="${branches[$idx]}"
+            arguments+=("--force-with-lease=refs/heads/$b:${original[$idx]}")
+            arguments+=("${rebuilt[$idx]}:refs/heads/$b")
+          done
+          arguments+=("--force-with-lease=refs/heads/main:$original_main")
+          arguments+=("$new_main:refs/heads/main")
+          git push --atomic origin "${arguments[@]}"
+          echo "Rebuilt STEP-1..STEP-5 and final main with verified cumulative ancestry."
