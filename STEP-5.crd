@@ -1,10 +1,10 @@
 {
   "crd_version": 1,
-  "name": "AI Document Classification Service STEP-4",
+  "name": "AI Document Classification Service STEP-5",
   "description": "Cumulative offline document triage, source-derived contracts",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
-    "revision": "step-04-store-label-and-review-decisions",
+    "revision": "step-05-verify-safety-and-error-tests",
     "roots": {
       "backend": "app"
     },
@@ -13,11 +13,11 @@
     ]
   },
   "step": {
-    "no": 4,
+    "no": 5,
     "of": 5,
-    "title": "Store label and review decisions",
-    "branch": "step-04-store-label-and-review-decisions",
-    "previous": "STEP-3.crd",
+    "title": "Verify safety and error tests",
+    "branch": "step-05-verify-safety-and-error-tests",
+    "previous": "STEP-4.crd",
     "removed": []
   },
   "flows": [
@@ -38,7 +38,7 @@
       "flows": [
         "classification"
       ],
-      "step_change": "changed",
+      "step_change": "unchanged",
       "source": {
         "file": "app/main.py",
         "symbol": "classify_document"
@@ -79,7 +79,7 @@
       "flows": [
         "classification"
       ],
-      "step_change": "added",
+      "step_change": "unchanged",
       "source": {
         "file": "app/document_service.py",
         "symbol": "process_document"
@@ -241,7 +241,7 @@
       "flows": [
         "classification"
       ],
-      "step_change": "added",
+      "step_change": "unchanged",
       "source": {
         "file": "app/document_service.py",
         "symbol": "persist"
