@@ -1,0 +1,83 @@
+name: Build real cumulative learning stages
+on:
+  push:
+    paths:
+      - .github/workflows/rebuild-learning-stages.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-document-classification-learning-stages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build snapshots, test every step, back up and move refs atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Inkplain Learning Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python -m py_compile .inkplain/rebuild_learning_stages.py
+          python .inkplain/rebuild_learning_stages.py /tmp/inkplain-real-stages
+          branches=(
+            step-01-validate-document-upload
+            step-02-extract-pdf-and-text-content
+            step-03-classify-with-offline-provider
+            step-04-store-label-and-review-decisions
+            step-05-verify-safety-and-error-tests
+          )
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*'
+          origmain="$(git rev-parse refs/remotes/origin/main)"
+          originals=()
+          for branch in "${branches[@]}"; do
+            originals+=("$(git rev-parse "refs/remotes/origin/$branch")")
+          done
+          git checkout --orphan inkplain-rebuilt-learning-root
+          git rm -rf . || true
+          git clean -fdx
+          newheads=()
+          for number in 1 2 3 4 5; do
+            if (( number > 1 )); then
+              previous=$((number - 1))
+              git rm -f "STEP-${previous}.crd" "STEP-${previous}.md"
+            fi
+            cp -a "/tmp/inkplain-real-stages/step-${number}/." .
+            git add -A
+            git commit -m "STEP-${number}: ${branches[$((number-1))]} with runnable tests and source-derived CRD"
+            newheads+=("$(git rev-parse HEAD)")
+            python -m pip install --quiet -r requirements.txt
+            python -m pytest -q
+          done
+          git rm -f STEP-5.crd STEP-5.md
+          cp -a /tmp/inkplain-real-stages/final/. .
+          mkdir -p .github/workflows .inkplain
+          git show "$origmain:.github/workflows/ci.yml" > .github/workflows/ci.yml
+          git show "$origmain:.github/workflows/rebuild-learning-stages.yml" > .github/workflows/rebuild-learning-stages.yml
+          git show "$origmain:.inkplain/rebuild_learning_stages.py" > .inkplain/rebuild_learning_stages.py
+          git add -A
+          git commit -m "main: exact final STEP-5 code with FINAL.crd and updated five-tab Simulator"
+          finalmain="$(git rev-parse HEAD)"
+          python -m pytest -q
+          for index in "${!branches[@]}"; do
+            git push origin "${originals[$index]}:refs/heads/backup-20261010-realsteps-${branches[$index]}"
+          done
+          git push origin "$origmain:refs/heads/backup-20261010-realsteps-main"
+          arguments=(--atomic)
+          for index in "${!branches[@]}"; do
+            branch="${branches[$index]}"
+            arguments+=("--force-with-lease=refs/heads/$branch:${originals[$index]}")
+            arguments+=("${newheads[$index]}:refs/heads/$branch")
+          done
+          arguments+=("--force-with-lease=refs/heads/main:$origmain")
+          arguments+=("$finalmain:refs/heads/main")
+          git push origin "${arguments[@]}"
+          echo "Five real cumulative branches tested and updated. main uses final STEP-5 source."
