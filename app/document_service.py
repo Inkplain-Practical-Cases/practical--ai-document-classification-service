@@ -56,3 +56,20 @@ def extract(filename: str, content: bytes) -> str:
         raise ValueError("Extracted text exceeds limit")
     return text
 
+# STEP-3: local, deterministic baseline with explicit uncertainty.
+def classify(text: str) -> tuple[str, float]:
+    """Return a label and confidence; heuristic scores are not calibrated."""
+    lower = text.lower()
+    cues = {
+        "invoice": ("invoice", "invoice number", "payment due", "bill to"),
+        "contract": ("agreement", "contract", "terms and conditions", "signatures"),
+        "resume": ("curriculum vitae", "work experience", "education", "resume"),
+    }
+    hits = {key: sum(term in lower for term in terms) for key, terms in cues.items()}
+    label = max(hits, key=hits.get)
+    if hits[label] == 0:
+        return "general", 0.30
+    if sum(n == hits[label] for n in hits.values()) > 1:
+        return "general", 0.40
+    return label, min(0.95, 0.65 + 0.10 * (hits[label] - 1))
+
