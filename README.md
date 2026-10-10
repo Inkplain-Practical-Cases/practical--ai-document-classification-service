@@ -1,15 +1,21 @@
-# ai-document-classification-service
+# AI Document Classification Service
 
-Inkplain FDE Starter learning repository. Five STEP branches introduce capabilities in sequence. Each STEP-N branch includes its own CRD, teaching notes and synthetic source. The final main branch contains the STEP-5 implementation.
+Offline, synthetic FastAPI learning service with deterministic document triage.
 
-## Local run
+## Run locally
 
 ```bash
-pip install -r requirements.txt
-pytest -q
+python -m pip install -r requirements.txt
 uvicorn app.main:app --reload
+python -m pytest -q
 ```
 
-**Caution:** This is a mock training implementation, not a production-grade integration. Real security controls, data storage and external provider implementations need further engineering and QA.
+POST a synthetic PDF or UTF-8 TXT file to `/documents/classify` (multipart field `file`).
+The response includes a label, confidence and review_required flag. Classification uses
+explicit keyword rules, **not an LLM**. Only a content SHA-256 digest and decision metadata
+are stored in SQLite (`DOCUMENT_DB`); source text and file bytes are not persisted.
 
-The canonical complete design is FINAL.crd. Simulator export and portal lessons are tracked separately in the Inkplain Case Flow.
+Limits: 2 MiB input, 30 PDF pages, 150k characters extracted. PDFs must have
+extractable text (no OCR). This is a teaching baseline, not a malware-hardened
+untrusted PDF sandbox. Existing STEP branches are historical lessons and need
+cumulative ancestry repair before the full case is published.

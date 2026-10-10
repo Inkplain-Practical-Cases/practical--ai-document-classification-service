@@ -1,22 +1,31 @@
-"""Typed HTTP door delegating to synthetic learning service functions."""
-from fastapi import FastAPI,HTTPException
-from pydantic import BaseModel,Field
-from app.features.step_2 import transform as action_2
-from app.features.step_3 import transform as action_3
-from app.features.step_4 import transform as action_4
-from app.features.step_5 import transform as action_5
-app=FastAPI(title="ai-document-classification-service")
-class Request(BaseModel):
-    message:str=Field(min_length=1,max_length=2000)
-@app.post("/process")
-def process(request:Request)->dict[str,str]:
-    """Apply source-defined transformations in an ordered sequence."""
+"""FastAPI HTTP boundary for the offline PDF/TXT classification learning case."""
+import os
+from fastapi import FastAPI, HTTPException, UploadFile, File
+from pydantic import BaseModel, Field
+from app.document_service import MAX_BYTES, process_document
+
+app = FastAPI(title="AI Document Classification Service")
+
+class ClassificationResponse(BaseModel):
+    id: str
+    label: str
+    confidence: float = Field(ge=0, le=1)
+    review_required: bool
+    text_length: int
+
+@app.get("/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}
+
+@app.post("/documents/classify", response_model=ClassificationResponse, status_code=201)
+async def classify_document(file: UploadFile = File(...)) -> ClassificationResponse:
+    """Bound the upload before reading; reject invalid documents with 422."""
+    raw = await file.read(MAX_BYTES + 1)
+    await file.close()
     try:
-        value=request.message
-        value=action_2(value)
-        value=action_3(value)
-        value=action_4(value)
-        value=action_5(value)
-        return {"status":"accepted","result":value}
+        decision = process_document(
+            file.filename or "document", raw,
+            os.environ.get("DOCUMENT_DB", "/tmp/inkplain-documents.sqlite3"))
     except ValueError as exc:
-        raise HTTPException(status_code=422,detail=str(exc)) from exc
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return ClassificationResponse(**vars(decision))
