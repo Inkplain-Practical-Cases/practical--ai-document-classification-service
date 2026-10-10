@@ -28,3 +28,31 @@ def validate_document(filename: str, content: bytes) -> None:
     if suffix == ".pdf" and not content.startswith(b"%PDF-"):
         raise ValueError("Invalid PDF signature")
 
+# STEP-2: keep PDF parsing separate from HTTP response handling.
+def extract(filename: str, content: bytes) -> str:
+    """Return normalized text from bounded PDF/TXT files, never raw bytes."""
+    validate_document(filename, content)
+    if filename.lower().endswith(".txt"):
+        try:
+            text = content.decode("utf-8-sig")
+        except UnicodeDecodeError as exc:
+            raise ValueError("TXT must be UTF-8") from exc
+    else:
+        try:
+            pdf = PdfReader(io.BytesIO(content), strict=True)
+            if pdf.is_encrypted:
+                raise ValueError("Encrypted PDFs are not supported")
+            if len(pdf.pages) > MAX_PAGES:
+                raise ValueError("PDF exceeds 30 pages")
+            text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+        except ValueError:
+            raise
+        except Exception as exc:
+            raise ValueError("Could not parse PDF") from exc
+    text = text.replace("\r\n", "\n").strip()
+    if not text:
+        raise ValueError("No extractable document text")
+    if len(text) > MAX_CHARS:
+        raise ValueError("Extracted text exceeds limit")
+    return text
+
