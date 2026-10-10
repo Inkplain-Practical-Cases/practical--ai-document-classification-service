@@ -1,10 +1,10 @@
 {
   "crd_version": 1,
-  "name": "AI Document Classification Service STEP-5",
+  "name": "AI Document Classification Service FINAL",
   "description": "Cumulative offline document triage, source-derived contracts",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
-    "revision": "step-05-verify-safety-and-error-tests",
+    "revision": "main",
     "roots": {
       "backend": "app"
     },
@@ -13,10 +13,10 @@
     ]
   },
   "step": {
-    "no": 5,
+    "no": "final",
     "of": 5,
     "title": "Verify safety and error tests",
-    "branch": "step-05-verify-safety-and-error-tests",
+    "branch": "main",
     "previous": "STEP-4.crd",
     "removed": []
   },

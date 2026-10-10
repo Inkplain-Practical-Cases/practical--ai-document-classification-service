@@ -1,24 +1,21 @@
-# AI Document Classification Service — STEP-5
+# AI Document Classification Service
 
-# STEP-5 of 5 — Verify safety and error tests
+Five cumulative FastAPI learning steps, each independently tested.
 
-## What you build
-A runnable, cumulative offline document ingestion slice. Open app/main.py for the HTTP door and app/document_service.py for the service logic.
+1. Validate document upload — step-01-validate-document-upload
+2. Extract PDF and text content — step-02-extract-pdf-and-text-content
+3. Classify with offline provider — step-03-classify-with-offline-provider
+4. Store label and review decisions — step-04-store-label-and-review-decisions
+5. Verify safety and error tests — step-05-verify-safety-and-error-tests
 
-## What changed
-Verify safety and error tests. The previous step's behavior remains covered by earlier tests.
+## Run the final service
 
-## Components and CRD
-be.classify_document, be.process_document, be.extract, be.validate_document, be.classify, be.persist. Follow calls listed in the accompanying STEP-5.crd.
-
-## Run and verify
 python -m pip install -r requirements.txt
 
 python -m pytest -q
 
 uvicorn app.main:app --reload
 
-Use only synthetic TXT/PDF fixtures. Binary PDF parsing is text-only (no OCR).
+POST synthetic PDF or TXT using multipart field file at /documents/classify. Responses include label, confidence, review_required and ID. Classification is deterministic keyword matching, not a remote LLM. Only SHA-256 document digest and decision metadata are retained in SQLite. No OCR or malware-hardened isolation is provided.
 
-## Next
-The final main branch adds FINAL.crd and the five-tab .inkp file.
+The final main branch includes FINAL.crd and ai-document-classification-service.inkp. Each STEP branch includes only its corresponding STEP-N.crd and STEP-N.md.
