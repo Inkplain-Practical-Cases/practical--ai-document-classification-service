@@ -1,0 +1,73 @@
+{
+  "practical_case": {
+    "id": "0AMoAEfFx7BvdiapIIwU",
+    "slug": "ai-document-classification-service",
+    "name": "AI Document Classification Service"
+  },
+  "current": "content",
+  "stages": {
+    "intro": {
+      "status": "done",
+      "summary": "FDE Starter case with five matched Starter profile skills (30% targets), seven substantive introduction sections and a five-step testable implementation plan saved and verified.",
+      "outputs": {
+        "profile": "forward-deployed-engineering",
+        "level": "starter",
+        "skills_linked": 5,
+        "intro_sections": 7,
+        "planned_steps": 5,
+        "portal_url": "/practical-case/ai-document-classification-service"
+      },
+      "started_at": "2026-10-10T14:32:18.236Z",
+      "finished_at": "2026-10-10T14:32:18.236Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "repo": {
+      "status": "done",
+      "summary": "Five genuine cumulative, runnable FastAPI STEP branches rebuilt with source-derived CRDs and their own STEP-N.md; each branch independently passed pytest in GitHub Actions run 38065958099. Full final main implements bounded PDF/TXT extraction, deterministic classification, review decisions and SQLite metadata storage; ancestry comparisons all ahead-by-one/behind-zero; six original refs backed up.",
+      "outputs": {
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
+        "planned_steps": 5,
+        "branch_refs_created": 5,
+        "steps_implemented": 5,
+        "steps_verified": 5,
+        "history_cumulative": true,
+        "ci_verified": true,
+        "steps_with_committed_source": 5,
+        "main_final": true,
+        "source_quality": "real offline PDF/TXT baseline with deterministic classifier and metadata-only SQLite persistence",
+        "backup_refs": 6,
+        "verification_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099"
+      },
+      "started_at": "2026-10-10T14:36:00.844Z",
+      "finished_at": "2026-10-10T16:03:07.801Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "inkp": {
+      "status": "done",
+      "summary": "Five-tab .inkp created on final main, each STEP tab linked to its source-derived executor component docs; get_inkp_summary confirms exactly STEP-1..STEP-5 and zero missing linked executor documents. Repo stage remains in progress separately for ancestry/CI.",
+      "outputs": {
+        "inkp_path": "ai-document-classification-service.inkp",
+        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/blob/main/ai-document-classification-service.inkp",
+        "tabs": 5,
+        "missing_links": 0
+      },
+      "started_at": "2026-10-10T15:05:19.857Z",
+      "finished_at": "2026-10-10T15:05:19.857Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "content": {
+      "status": "in_progress",
+      "summary": "Portal has 7 categories and 30 items, but source-exact content is not yet accepted: repository lacks verified cumulative ancestry, full PDF extraction/classification/storage acceptance, and independent STEP test runs. Stage 4 remains in progress pending source-quality verification.",
+      "outputs": {
+        "categories_created": 7,
+        "items_created": 30,
+        "content_verified": false,
+        "dependency_repo_verified": false
+      },
+      "started_at": "2026-10-10T15:44:32.019Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
+    }
+  },
+  "updated_at": "2026-10-10T16:03:07.801Z"
+}
