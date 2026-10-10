@@ -4,7 +4,7 @@
     "slug": "ai-document-classification-service",
     "name": "AI Document Classification Service"
   },
-  "current": "content",
+  "current": "done",
   "stages": {
     "intro": {
       "status": "done",
@@ -57,18 +57,26 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
-      "status": "in_progress",
-      "summary": "Portal has 7 categories and 30 items, but source-exact content is not yet accepted: repository lacks verified cumulative ancestry, full PDF extraction/classification/storage acceptance, and independent STEP test runs. Stage 4 remains in progress pending source-quality verification.",
+      "status": "done",
+      "summary": "All 30 portal lessons across Overview (7), five STEP categories (4 each), and Conclusion (3) were revised against the rebuilt, tested cumulative Python repo. Each STEP has source-linked CRD explanation, 4M component coverage, code walkthrough, run checks; all System Design items embed the matching STEP-N .inkp tab. Final readback confirms seven categories, 30 items, five simulator tabs and zero missing linked documents.",
       "outputs": {
         "categories_created": 7,
         "items_created": 30,
-        "content_verified": false,
-        "dependency_repo_verified": false
+        "content_verified": true,
+        "dependency_repo_verified": false,
+        "portal_url": "/practical-case/ai-document-classification-service",
+        "categories": 7,
+        "items": 30,
+        "steps": 5,
+        "source_reconciled": true,
+        "inkp_tabs": 5,
+        "missing_simulator_links": 0,
+        "github_actions_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099"
       },
       "started_at": "2026-10-10T15:44:32.019Z",
-      "finished_at": null,
+      "finished_at": "2026-10-10T16:25:12.497Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T16:03:18.739Z"
+  "updated_at": "2026-10-10T16:25:12.497Z"
 }
