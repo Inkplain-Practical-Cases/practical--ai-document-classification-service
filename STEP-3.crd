@@ -1,10 +1,10 @@
 {
   "crd_version": 1,
-  "name": "ai-document-classification-service STEP-2",
-  "description": "Extract PDF and text content",
+  "name": "ai-document-classification-service STEP-3",
+  "description": "Classify with offline provider",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
-    "revision": "step-02-extract-pdf-and-text-content",
+    "revision": "step-03-classify-with-offline-provider",
     "roots": {
       "backend": "app"
     },
@@ -13,11 +13,11 @@
     ]
   },
   "step": {
-    "no": 2,
+    "no": 3,
     "of": 5,
-    "title": "Extract PDF and text content",
-    "branch": "step-02-extract-pdf-and-text-content",
-    "previous": "STEP-1.crd",
+    "title": "Classify with offline provider",
+    "branch": "step-03-classify-with-offline-provider",
+    "previous": "STEP-2.crd",
     "removed": []
   },
   "flows": [
@@ -47,6 +47,14 @@
             "to": "be.step_2",
             "type": "call"
           }
+        },
+        {
+          "id": "op-3",
+          "title": "Invoke step 3",
+          "calls": {
+            "to": "be.step_3",
+            "type": "call"
+          }
         }
       ]
     },
@@ -56,9 +64,22 @@
       "kind": "function",
       "side": "backend",
       "layer": "service",
-      "step_change": "added",
+      "step_change": "unchanged",
       "source": {
         "file": "app/features/step_2.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    },
+    {
+      "id": "be.step_3",
+      "name": "transform_3",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "added",
+      "source": {
+        "file": "app/features/step_3.py",
         "symbol": "transform"
       },
       "operations": []
