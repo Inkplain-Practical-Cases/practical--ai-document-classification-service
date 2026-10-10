@@ -1,10 +1,10 @@
 {
   "crd_version": 1,
-  "name": "ai-document-classification-service STEP-3",
-  "description": "Classify with offline provider",
+  "name": "ai-document-classification-service STEP-4",
+  "description": "Store label and review decisions",
   "source": {
     "repo": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
-    "revision": "step-03-classify-with-offline-provider",
+    "revision": "step-04-store-label-and-review-decisions",
     "roots": {
       "backend": "app"
     },
@@ -13,11 +13,11 @@
     ]
   },
   "step": {
-    "no": 3,
+    "no": 4,
     "of": 5,
-    "title": "Classify with offline provider",
-    "branch": "step-03-classify-with-offline-provider",
-    "previous": "STEP-2.crd",
+    "title": "Store label and review decisions",
+    "branch": "step-04-store-label-and-review-decisions",
+    "previous": "STEP-3.crd",
     "removed": []
   },
   "flows": [
@@ -55,6 +55,14 @@
             "to": "be.step_3",
             "type": "call"
           }
+        },
+        {
+          "id": "op-4",
+          "title": "Invoke step 4",
+          "calls": {
+            "to": "be.step_4",
+            "type": "call"
+          }
         }
       ]
     },
@@ -77,9 +85,22 @@
       "kind": "function",
       "side": "backend",
       "layer": "service",
-      "step_change": "added",
+      "step_change": "unchanged",
       "source": {
         "file": "app/features/step_3.py",
+        "symbol": "transform"
+      },
+      "operations": []
+    },
+    {
+      "id": "be.step_4",
+      "name": "transform_4",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "step_change": "added",
+      "source": {
+        "file": "app/features/step_4.py",
         "symbol": "transform"
       },
       "operations": []
