@@ -80,7 +80,7 @@
         "items": 30,
         "steps": 5,
         "source_reconciled": true,
-        "inkp_tabs": 5,
+        "inkp_tabs": 7,
         "missing_simulator_links": 0,
         "github_actions_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099",
         "erd_lessons_updated": 2,
@@ -94,5 +94,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-13T10:35:17.381Z"
+  "updated_at": "2026-10-13T10:35:22.067Z"
 }
