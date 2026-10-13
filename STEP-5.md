@@ -20,3 +20,6 @@ Use only synthetic TXT/PDF fixtures. Binary PDF parsing is text-only (no OCR).
 
 ## Next
 The final main branch adds FINAL.crd and the five-tab .inkp file.
+
+## Database model — STEP-5-ERD
+This step keeps the SQLite `decisions` table introduced in STEP-4 without changing its schema. `STEP-5.erd` contains the whole table and labels it `step_change: unchanged`. Open `STEP-5-ERD` in the main `.inkp` Simulator project to compare it with STEP-4; both are generated from the real `persist` SQL in `app/document_service.py`. There are no additional tables or relationships in this step.
