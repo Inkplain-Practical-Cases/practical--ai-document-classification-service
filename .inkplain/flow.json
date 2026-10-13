@@ -66,7 +66,7 @@
     },
     "content": {
       "status": "done",
-      "summary": "Verified 7 populated portal categories and 30 source-aligned lessons, including five matching Simulator diagrams with zero missing executor documents. Stage 2 cumulative Python branches and final main passed pytest in GitHub Actions, and all ancestor comparisons passed.",
+      "summary": "Updated STEP-4 and STEP-5 System design lessons with active source-backed ERD visualization blocks, explanatory SQLite field documentation, preserving existing CRD flow diagrams and lessons.",
       "outputs": {
         "categories_created": 7,
         "items_created": 30,
@@ -79,12 +79,17 @@
         "source_reconciled": true,
         "inkp_tabs": 5,
         "missing_simulator_links": 0,
-        "github_actions_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099"
+        "github_actions_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099",
+        "erd_lessons_updated": 2,
+        "erd_visualizations": [
+          "STEP-4-ERD",
+          "STEP-5-ERD"
+        ]
       },
       "started_at": "2026-10-10T15:44:32.019Z",
       "finished_at": "2026-10-10T16:25:12.497Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-13T10:34:14.503Z"
+  "updated_at": "2026-10-13T10:34:19.308Z"
 }
