@@ -69,15 +69,15 @@
     },
     "content": {
       "status": "done",
-      "summary": "Updated STEP-4 and STEP-5 System design lessons with active source-backed ERD visualization blocks, explanatory SQLite field documentation, preserving existing CRD flow diagrams and lessons.",
+      "summary": "Added separately named 'Database (Entity) Relations' lesson to STEP-4 and STEP-5 at sidebar position 2, after System design; each shows the correct .inkp ERD tab, SQLite fields and real STEP source links. Removed duplicate ERD blocks from original System design lessons. MCP readback verified both item orders and visualization blocks.",
       "outputs": {
         "categories_created": 7,
-        "items_created": 30,
+        "items_created": 32,
         "content_verified": true,
         "dependency_repo_verified": true,
         "portal_url": "/practical-case/ai-document-classification-service",
         "categories": 7,
-        "items": 30,
+        "items": 32,
         "steps": 5,
         "source_reconciled": true,
         "inkp_tabs": 7,
@@ -87,12 +87,14 @@
         "erd_visualizations": [
           "STEP-4-ERD",
           "STEP-5-ERD"
-        ]
+        ],
+        "erd_lessons_created": 2,
+        "erd_item_title": "Database (Entity) Relations"
       },
       "started_at": "2026-10-10T15:44:32.019Z",
       "finished_at": "2026-10-10T16:25:12.497Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-13T10:35:22.067Z"
+  "updated_at": "2026-10-13T11:06:23.096Z"
 }
