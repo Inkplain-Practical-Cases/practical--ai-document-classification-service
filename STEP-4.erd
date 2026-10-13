@@ -1,0 +1,60 @@
+{
+  "erd_version": 1,
+  "name": "ai-document-classification-service",
+  "engine": "sqlite",
+  "generated_from": [
+    "app/document_service.py",
+    "app/main.py"
+  ],
+  "entities": [
+    {
+      "id": "decisions",
+      "name": "decisions",
+      "kind": "table",
+      "step_change": "added",
+      "description": "Stores one classification result per processed document. Metadata and file digest only; original PDF/TXT bytes or extracted text are not stored.",
+      "source": "app/document_service.py: persist() CREATE TABLE IF NOT EXISTS decisions",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "key": "PK",
+          "nullable": false,
+          "description": "Decision UUID created by process_document."
+        },
+        {
+          "name": "sha256",
+          "type": "TEXT",
+          "nullable": false,
+          "description": "SHA-256 digest of input file bytes."
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "nullable": false,
+          "description": "Detected document category."
+        },
+        {
+          "name": "confidence",
+          "type": "REAL",
+          "nullable": false,
+          "description": "Uncalibrated keyword confidence score."
+        },
+        {
+          "name": "review_required",
+          "type": "INTEGER",
+          "nullable": false,
+          "description": "0/1 flag when confidence is below 0.75."
+        },
+        {
+          "name": "text_length",
+          "type": "INTEGER",
+          "nullable": false,
+          "description": "Count of extracted characters."
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "step": 4
+}
