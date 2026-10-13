@@ -23,20 +23,23 @@
     },
     "repo": {
       "status": "done",
-      "summary": "Five genuine cumulative, runnable FastAPI STEP branches rebuilt with source-derived CRDs and their own STEP-N.md; each branch independently passed pytest in GitHub Actions run 38065958099. Full final main implements bounded PDF/TXT extraction, deterministic classification, review decisions and SQLite metadata storage; ancestry comparisons all ahead-by-one/behind-zero; six original refs backed up.",
+      "summary": "All five runnable source branches and SQLite ERD files are present. Source code stays cumulative; ERD documentation commits diverged from strict Git ancestry between STEP-4 → STEP-5 → main, so history normalization needs a separate approved repair.",
       "outputs": {
         "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service",
         "planned_steps": 5,
         "branch_refs_created": 5,
         "steps_implemented": 5,
         "steps_verified": 5,
-        "history_cumulative": true,
+        "history_cumulative": false,
         "ci_verified": true,
         "steps_with_committed_source": 5,
         "main_final": true,
         "source_quality": "real offline PDF/TXT baseline with deterministic classifier and metadata-only SQLite persistence",
         "backup_refs": 6,
-        "verification_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099"
+        "verification_run": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/actions/runs/38065958099",
+        "history_followup_required": true,
+        "erd_step_files": 2,
+        "final_erd_path": "FINAL.erd"
       },
       "started_at": "2026-10-10T14:36:00.844Z",
       "finished_at": "2026-10-10T16:03:07.801Z",
@@ -91,5 +94,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-13T10:34:19.308Z"
+  "updated_at": "2026-10-13T10:35:17.381Z"
 }
