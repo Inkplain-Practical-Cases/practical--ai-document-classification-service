@@ -44,13 +44,21 @@
     },
     "inkp": {
       "status": "done",
-      "summary": "Regenerated five-step .inkp from the rebuilt source-derived STEP CRDs, verified STEP-1..STEP-5 diagrams with node counts 2/3/4/6/6 and zero missing linked executor documents. Simulator now follows real document classification code.",
+      "summary": "Added source-backed SQLite decisions ERDs to the main INKP: five original CRD STEP tabs plus STEP-4-ERD and STEP-5-ERD; read-back 7/7 tabs, 28 docs, zero broken executor links.",
       "outputs": {
         "inkp_path": "ai-document-classification-service.inkp",
         "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--ai-document-classification-service/blob/main/ai-document-classification-service.inkp",
-        "tabs": 5,
+        "tabs": 7,
         "missing_links": 0,
-        "source_revision": "8c3783b8749506e8a28db72a27f9a8ae325a72d5"
+        "source_revision": "30f0fa94a0aac61cf0842efe43faef318e2422f2",
+        "flow_tabs": 5,
+        "erd_tabs": [
+          "STEP-4-ERD",
+          "STEP-5-ERD"
+        ],
+        "erd_entities": 1,
+        "erd_relations": 0,
+        "source_commit": "30f0fa94a0aac61cf0842efe43faef318e2422f2"
       },
       "started_at": "2026-10-10T15:05:19.857Z",
       "finished_at": "2026-10-10T15:05:19.857Z",
@@ -78,5 +86,5 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T16:25:24.845Z"
+  "updated_at": "2026-10-13T10:34:14.503Z"
 }
