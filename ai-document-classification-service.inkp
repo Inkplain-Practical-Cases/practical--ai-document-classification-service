@@ -1,1 +1,1828 @@
-{"version":1,"exportedAt":"2026-10-10T16:00:00Z","projectId":"crd-ai-document-classification-service","projectName":"AI Document Classification Service","meta":null,"docs":[{"path":"process_executor_canvas/crd-ai-document-classification-service-s1-be-classify_document","data":{"name":"classify_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-validate_document","title":"Call be.validate_document","calls":{"to":"be.validate_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/main.py::classify_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s1-be-validate_document","data":{"name":"validate_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::validate_document"}]}},{"path":"diagram_canvas/crd-ai-document-classification-service-step-1","data":{"name":"STEP-1","order":0,"nodes":[{"id":"node-crd-ai-document-classification-service-s1-be-classify_document","type":"diagramNode","position":{"x":100,"y":130},"width":220,"height":190,"data":{"label":"classify_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s1-be-classify_document","linkedCanvasName":"classify_document","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s1-be-validate_document","type":"diagramNode","position":{"x":365,"y":130},"width":220,"height":190,"data":{"label":"validate_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s1-be-validate_document","linkedCanvasName":"validate_document","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}}],"edges":[{"id":"edge-1-0","source":"node-crd-ai-document-classification-service-s1-be-classify_document","target":"node-crd-ai-document-classification-service-s1-be-validate_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s2-be-classify_document","data":{"name":"classify_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-extract","title":"Call be.extract","calls":{"to":"be.extract","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/main.py::classify_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s2-be-extract","data":{"name":"extract","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-validate_document","title":"Call be.validate_document","calls":{"to":"be.validate_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::extract"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s2-be-validate_document","data":{"name":"validate_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::validate_document"}]}},{"path":"diagram_canvas/crd-ai-document-classification-service-step-2","data":{"name":"STEP-2","order":1,"nodes":[{"id":"node-crd-ai-document-classification-service-s2-be-classify_document","type":"diagramNode","position":{"x":100,"y":130},"width":220,"height":190,"data":{"label":"classify_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s2-be-classify_document","linkedCanvasName":"classify_document","nodeAttributes":[{"key":"step_change","value":"changed"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s2-be-extract","type":"diagramNode","position":{"x":365,"y":130},"width":220,"height":190,"data":{"label":"extract","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s2-be-extract","linkedCanvasName":"extract","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s2-be-validate_document","type":"diagramNode","position":{"x":630,"y":130},"width":220,"height":190,"data":{"label":"validate_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s2-be-validate_document","linkedCanvasName":"validate_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}}],"edges":[{"id":"edge-2-0","source":"node-crd-ai-document-classification-service-s2-be-classify_document","target":"node-crd-ai-document-classification-service-s2-be-extract","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-2-1","source":"node-crd-ai-document-classification-service-s2-be-extract","target":"node-crd-ai-document-classification-service-s2-be-validate_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s3-be-classify_document","data":{"name":"classify_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-extract","title":"Call be.extract","calls":{"to":"be.extract","type":"call"}},{"id":"call-be-classify","title":"Call be.classify","calls":{"to":"be.classify","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/main.py::classify_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s3-be-extract","data":{"name":"extract","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-validate_document","title":"Call be.validate_document","calls":{"to":"be.validate_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::extract"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s3-be-validate_document","data":{"name":"validate_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::validate_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s3-be-classify","data":{"name":"classify","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::classify"}]}},{"path":"diagram_canvas/crd-ai-document-classification-service-step-3","data":{"name":"STEP-3","order":2,"nodes":[{"id":"node-crd-ai-document-classification-service-s3-be-classify_document","type":"diagramNode","position":{"x":100,"y":130},"width":220,"height":190,"data":{"label":"classify_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s3-be-classify_document","linkedCanvasName":"classify_document","nodeAttributes":[{"key":"step_change","value":"changed"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s3-be-extract","type":"diagramNode","position":{"x":365,"y":130},"width":220,"height":190,"data":{"label":"extract","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s3-be-extract","linkedCanvasName":"extract","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s3-be-validate_document","type":"diagramNode","position":{"x":630,"y":130},"width":220,"height":190,"data":{"label":"validate_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s3-be-validate_document","linkedCanvasName":"validate_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s3-be-classify","type":"diagramNode","position":{"x":895,"y":130},"width":220,"height":190,"data":{"label":"classify","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s3-be-classify","linkedCanvasName":"classify","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}}],"edges":[{"id":"edge-3-0","source":"node-crd-ai-document-classification-service-s3-be-classify_document","target":"node-crd-ai-document-classification-service-s3-be-extract","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-3-1","source":"node-crd-ai-document-classification-service-s3-be-extract","target":"node-crd-ai-document-classification-service-s3-be-validate_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-3-2","source":"node-crd-ai-document-classification-service-s3-be-classify_document","target":"node-crd-ai-document-classification-service-s3-be-classify","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-classify_document","data":{"name":"classify_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-process_document","title":"Call be.process_document","calls":{"to":"be.process_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/main.py::classify_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-process_document","data":{"name":"process_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-extract","title":"Call be.extract","calls":{"to":"be.extract","type":"call"}},{"id":"call-be-classify","title":"Call be.classify","calls":{"to":"be.classify","type":"call"}},{"id":"call-be-persist","title":"Call be.persist","calls":{"to":"be.persist","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::process_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-extract","data":{"name":"extract","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-validate_document","title":"Call be.validate_document","calls":{"to":"be.validate_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::extract"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-validate_document","data":{"name":"validate_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::validate_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-classify","data":{"name":"classify","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::classify"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s4-be-persist","data":{"name":"persist","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::persist"}]}},{"path":"diagram_canvas/crd-ai-document-classification-service-step-4","data":{"name":"STEP-4","order":3,"nodes":[{"id":"node-crd-ai-document-classification-service-s4-be-classify_document","type":"diagramNode","position":{"x":100,"y":130},"width":220,"height":190,"data":{"label":"classify_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-classify_document","linkedCanvasName":"classify_document","nodeAttributes":[{"key":"step_change","value":"changed"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s4-be-process_document","type":"diagramNode","position":{"x":365,"y":130},"width":220,"height":190,"data":{"label":"process_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-process_document","linkedCanvasName":"process_document","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s4-be-extract","type":"diagramNode","position":{"x":630,"y":130},"width":220,"height":190,"data":{"label":"extract","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-extract","linkedCanvasName":"extract","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s4-be-validate_document","type":"diagramNode","position":{"x":895,"y":130},"width":220,"height":190,"data":{"label":"validate_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-validate_document","linkedCanvasName":"validate_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s4-be-classify","type":"diagramNode","position":{"x":100,"y":360},"width":220,"height":190,"data":{"label":"classify","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-classify","linkedCanvasName":"classify","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s4-be-persist","type":"diagramNode","position":{"x":365,"y":360},"width":220,"height":190,"data":{"label":"persist","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s4-be-persist","linkedCanvasName":"persist","nodeAttributes":[{"key":"step_change","value":"added"}],"operationSteps":[]}}],"edges":[{"id":"edge-4-0","source":"node-crd-ai-document-classification-service-s4-be-classify_document","target":"node-crd-ai-document-classification-service-s4-be-process_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-4-1","source":"node-crd-ai-document-classification-service-s4-be-process_document","target":"node-crd-ai-document-classification-service-s4-be-extract","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-4-2","source":"node-crd-ai-document-classification-service-s4-be-extract","target":"node-crd-ai-document-classification-service-s4-be-validate_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-4-3","source":"node-crd-ai-document-classification-service-s4-be-process_document","target":"node-crd-ai-document-classification-service-s4-be-classify","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-4-4","source":"node-crd-ai-document-classification-service-s4-be-process_document","target":"node-crd-ai-document-classification-service-s4-be-persist","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-classify_document","data":{"name":"classify_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-process_document","title":"Call be.process_document","calls":{"to":"be.process_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/main.py::classify_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-process_document","data":{"name":"process_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-extract","title":"Call be.extract","calls":{"to":"be.extract","type":"call"}},{"id":"call-be-classify","title":"Call be.classify","calls":{"to":"be.classify","type":"call"}},{"id":"call-be-persist","title":"Call be.persist","calls":{"to":"be.persist","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::process_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-extract","data":{"name":"extract","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[{"id":"call-be-validate_document","title":"Call be.validate_document","calls":{"to":"be.validate_document","type":"call"}}],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::extract"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-validate_document","data":{"name":"validate_document","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::validate_document"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-classify","data":{"name":"classify","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::classify"}]}},{"path":"process_executor_canvas/crd-ai-document-classification-service-s5-be-persist","data":{"name":"persist","input":[{"name":"document","description":"Synthetic input or validated service arguments"}],"validations":["Reject malformed, unauthorized or out-of-bound input before side effects"],"operation":[],"output":[{"name":"result","description":"Typed local result or a specific validation failure"}],"attributes":[{"key":"source","value":"app/document_service.py::persist"}]}},{"path":"diagram_canvas/crd-ai-document-classification-service-step-5","data":{"name":"STEP-5","order":4,"nodes":[{"id":"node-crd-ai-document-classification-service-s5-be-classify_document","type":"diagramNode","position":{"x":100,"y":130},"width":220,"height":190,"data":{"label":"classify_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-classify_document","linkedCanvasName":"classify_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s5-be-process_document","type":"diagramNode","position":{"x":365,"y":130},"width":220,"height":190,"data":{"label":"process_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-process_document","linkedCanvasName":"process_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s5-be-extract","type":"diagramNode","position":{"x":630,"y":130},"width":220,"height":190,"data":{"label":"extract","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-extract","linkedCanvasName":"extract","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s5-be-validate_document","type":"diagramNode","position":{"x":895,"y":130},"width":220,"height":190,"data":{"label":"validate_document","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-validate_document","linkedCanvasName":"validate_document","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s5-be-classify","type":"diagramNode","position":{"x":100,"y":360},"width":220,"height":190,"data":{"label":"classify","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-classify","linkedCanvasName":"classify","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}},{"id":"node-crd-ai-document-classification-service-s5-be-persist","type":"diagramNode","position":{"x":365,"y":360},"width":220,"height":190,"data":{"label":"persist","shape":"module","icon":"function","color":"#1677ff","linkedCanvasId":"crd-ai-document-classification-service-s5-be-persist","linkedCanvasName":"persist","nodeAttributes":[{"key":"step_change","value":"unchanged"}],"operationSteps":[]}}],"edges":[{"id":"edge-5-0","source":"node-crd-ai-document-classification-service-s5-be-classify_document","target":"node-crd-ai-document-classification-service-s5-be-process_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-5-1","source":"node-crd-ai-document-classification-service-s5-be-process_document","target":"node-crd-ai-document-classification-service-s5-be-extract","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-5-2","source":"node-crd-ai-document-classification-service-s5-be-extract","target":"node-crd-ai-document-classification-service-s5-be-validate_document","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-5-3","source":"node-crd-ai-document-classification-service-s5-be-process_document","target":"node-crd-ai-document-classification-service-s5-be-classify","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}},{"id":"edge-5-4","source":"node-crd-ai-document-classification-service-s5-be-process_document","target":"node-crd-ai-document-classification-service-s5-be-persist","sourceHandle":"r","targetHandle":"l","type":"smoothstep","data":{"color":"#64748b","lineStyle":"solid","markerStartShape":"none","markerEndShape":"arrowclosed","pathType":"orthogonal","strokeWidth":1}}]}}]}
+{
+  "version": 1,
+  "exportedAt": "2026-10-10T16:00:00Z",
+  "projectId": "crd-ai-document-classification-service",
+  "projectName": "AI Document Classification Service",
+  "meta": null,
+  "docs": [
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s1-be-classify_document",
+      "data": {
+        "name": "classify_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-validate_document",
+            "title": "Call be.validate_document",
+            "calls": {
+              "to": "be.validate_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/main.py::classify_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s1-be-validate_document",
+      "data": {
+        "name": "validate_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::validate_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/crd-ai-document-classification-service-step-1",
+      "data": {
+        "name": "STEP-1",
+        "order": 0,
+        "nodes": [
+          {
+            "id": "node-crd-ai-document-classification-service-s1-be-classify_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s1-be-classify_document",
+              "linkedCanvasName": "classify_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s1-be-validate_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "validate_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s1-be-validate_document",
+              "linkedCanvasName": "validate_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-1-0",
+            "source": "node-crd-ai-document-classification-service-s1-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s1-be-validate_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s2-be-classify_document",
+      "data": {
+        "name": "classify_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-extract",
+            "title": "Call be.extract",
+            "calls": {
+              "to": "be.extract",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/main.py::classify_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s2-be-extract",
+      "data": {
+        "name": "extract",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-validate_document",
+            "title": "Call be.validate_document",
+            "calls": {
+              "to": "be.validate_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::extract"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s2-be-validate_document",
+      "data": {
+        "name": "validate_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::validate_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/crd-ai-document-classification-service-step-2",
+      "data": {
+        "name": "STEP-2",
+        "order": 1,
+        "nodes": [
+          {
+            "id": "node-crd-ai-document-classification-service-s2-be-classify_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s2-be-classify_document",
+              "linkedCanvasName": "classify_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "changed"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s2-be-extract",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "extract",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s2-be-extract",
+              "linkedCanvasName": "extract",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s2-be-validate_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 630,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "validate_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s2-be-validate_document",
+              "linkedCanvasName": "validate_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-2-0",
+            "source": "node-crd-ai-document-classification-service-s2-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s2-be-extract",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-2-1",
+            "source": "node-crd-ai-document-classification-service-s2-be-extract",
+            "target": "node-crd-ai-document-classification-service-s2-be-validate_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s3-be-classify_document",
+      "data": {
+        "name": "classify_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-extract",
+            "title": "Call be.extract",
+            "calls": {
+              "to": "be.extract",
+              "type": "call"
+            }
+          },
+          {
+            "id": "call-be-classify",
+            "title": "Call be.classify",
+            "calls": {
+              "to": "be.classify",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/main.py::classify_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s3-be-extract",
+      "data": {
+        "name": "extract",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-validate_document",
+            "title": "Call be.validate_document",
+            "calls": {
+              "to": "be.validate_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::extract"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s3-be-validate_document",
+      "data": {
+        "name": "validate_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::validate_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s3-be-classify",
+      "data": {
+        "name": "classify",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::classify"
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/crd-ai-document-classification-service-step-3",
+      "data": {
+        "name": "STEP-3",
+        "order": 2,
+        "nodes": [
+          {
+            "id": "node-crd-ai-document-classification-service-s3-be-classify_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s3-be-classify_document",
+              "linkedCanvasName": "classify_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "changed"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s3-be-extract",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "extract",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s3-be-extract",
+              "linkedCanvasName": "extract",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s3-be-validate_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 630,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "validate_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s3-be-validate_document",
+              "linkedCanvasName": "validate_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s3-be-classify",
+            "type": "diagramNode",
+            "position": {
+              "x": 895,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s3-be-classify",
+              "linkedCanvasName": "classify",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-3-0",
+            "source": "node-crd-ai-document-classification-service-s3-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s3-be-extract",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-3-1",
+            "source": "node-crd-ai-document-classification-service-s3-be-extract",
+            "target": "node-crd-ai-document-classification-service-s3-be-validate_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-3-2",
+            "source": "node-crd-ai-document-classification-service-s3-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s3-be-classify",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-classify_document",
+      "data": {
+        "name": "classify_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-process_document",
+            "title": "Call be.process_document",
+            "calls": {
+              "to": "be.process_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/main.py::classify_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-process_document",
+      "data": {
+        "name": "process_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-extract",
+            "title": "Call be.extract",
+            "calls": {
+              "to": "be.extract",
+              "type": "call"
+            }
+          },
+          {
+            "id": "call-be-classify",
+            "title": "Call be.classify",
+            "calls": {
+              "to": "be.classify",
+              "type": "call"
+            }
+          },
+          {
+            "id": "call-be-persist",
+            "title": "Call be.persist",
+            "calls": {
+              "to": "be.persist",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::process_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-extract",
+      "data": {
+        "name": "extract",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-validate_document",
+            "title": "Call be.validate_document",
+            "calls": {
+              "to": "be.validate_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::extract"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-validate_document",
+      "data": {
+        "name": "validate_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::validate_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-classify",
+      "data": {
+        "name": "classify",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::classify"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s4-be-persist",
+      "data": {
+        "name": "persist",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::persist"
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/crd-ai-document-classification-service-step-4",
+      "data": {
+        "name": "STEP-4",
+        "order": 3,
+        "nodes": [
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-classify_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-classify_document",
+              "linkedCanvasName": "classify_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "changed"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-process_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "process_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-process_document",
+              "linkedCanvasName": "process_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-extract",
+            "type": "diagramNode",
+            "position": {
+              "x": 630,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "extract",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-extract",
+              "linkedCanvasName": "extract",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-validate_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 895,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "validate_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-validate_document",
+              "linkedCanvasName": "validate_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-classify",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 360
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-classify",
+              "linkedCanvasName": "classify",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s4-be-persist",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 360
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "persist",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s4-be-persist",
+              "linkedCanvasName": "persist",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "added"
+                }
+              ],
+              "operationSteps": []
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-4-0",
+            "source": "node-crd-ai-document-classification-service-s4-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s4-be-process_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-1",
+            "source": "node-crd-ai-document-classification-service-s4-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s4-be-extract",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-2",
+            "source": "node-crd-ai-document-classification-service-s4-be-extract",
+            "target": "node-crd-ai-document-classification-service-s4-be-validate_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-3",
+            "source": "node-crd-ai-document-classification-service-s4-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s4-be-classify",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-4-4",
+            "source": "node-crd-ai-document-classification-service-s4-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s4-be-persist",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-classify_document",
+      "data": {
+        "name": "classify_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-process_document",
+            "title": "Call be.process_document",
+            "calls": {
+              "to": "be.process_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/main.py::classify_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-process_document",
+      "data": {
+        "name": "process_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-extract",
+            "title": "Call be.extract",
+            "calls": {
+              "to": "be.extract",
+              "type": "call"
+            }
+          },
+          {
+            "id": "call-be-classify",
+            "title": "Call be.classify",
+            "calls": {
+              "to": "be.classify",
+              "type": "call"
+            }
+          },
+          {
+            "id": "call-be-persist",
+            "title": "Call be.persist",
+            "calls": {
+              "to": "be.persist",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::process_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-extract",
+      "data": {
+        "name": "extract",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [
+          {
+            "id": "call-be-validate_document",
+            "title": "Call be.validate_document",
+            "calls": {
+              "to": "be.validate_document",
+              "type": "call"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::extract"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-validate_document",
+      "data": {
+        "name": "validate_document",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::validate_document"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-classify",
+      "data": {
+        "name": "classify",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::classify"
+          }
+        ]
+      }
+    },
+    {
+      "path": "process_executor_canvas/crd-ai-document-classification-service-s5-be-persist",
+      "data": {
+        "name": "persist",
+        "input": [
+          {
+            "name": "document",
+            "description": "Synthetic input or validated service arguments"
+          }
+        ],
+        "validations": [
+          "Reject malformed, unauthorized or out-of-bound input before side effects"
+        ],
+        "operation": [],
+        "output": [
+          {
+            "name": "result",
+            "description": "Typed local result or a specific validation failure"
+          }
+        ],
+        "attributes": [
+          {
+            "key": "source",
+            "value": "app/document_service.py::persist"
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/crd-ai-document-classification-service-step-5",
+      "data": {
+        "name": "STEP-5",
+        "order": 4,
+        "nodes": [
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-classify_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-classify_document",
+              "linkedCanvasName": "classify_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-process_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "process_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-process_document",
+              "linkedCanvasName": "process_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-extract",
+            "type": "diagramNode",
+            "position": {
+              "x": 630,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "extract",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-extract",
+              "linkedCanvasName": "extract",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-validate_document",
+            "type": "diagramNode",
+            "position": {
+              "x": 895,
+              "y": 130
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "validate_document",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-validate_document",
+              "linkedCanvasName": "validate_document",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-classify",
+            "type": "diagramNode",
+            "position": {
+              "x": 100,
+              "y": 360
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "classify",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-classify",
+              "linkedCanvasName": "classify",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          },
+          {
+            "id": "node-crd-ai-document-classification-service-s5-be-persist",
+            "type": "diagramNode",
+            "position": {
+              "x": 365,
+              "y": 360
+            },
+            "width": 220,
+            "height": 190,
+            "data": {
+              "label": "persist",
+              "shape": "module",
+              "icon": "function",
+              "color": "#1677ff",
+              "linkedCanvasId": "crd-ai-document-classification-service-s5-be-persist",
+              "linkedCanvasName": "persist",
+              "nodeAttributes": [
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                }
+              ],
+              "operationSteps": []
+            }
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-5-0",
+            "source": "node-crd-ai-document-classification-service-s5-be-classify_document",
+            "target": "node-crd-ai-document-classification-service-s5-be-process_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-1",
+            "source": "node-crd-ai-document-classification-service-s5-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s5-be-extract",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-2",
+            "source": "node-crd-ai-document-classification-service-s5-be-extract",
+            "target": "node-crd-ai-document-classification-service-s5-be-validate_document",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-3",
+            "source": "node-crd-ai-document-classification-service-s5-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s5-be-classify",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "id": "edge-5-4",
+            "source": "node-crd-ai-document-classification-service-s5-be-process_document",
+            "target": "node-crd-ai-document-classification-service-s5-be-persist",
+            "sourceHandle": "r",
+            "targetHandle": "l",
+            "type": "smoothstep",
+            "data": {
+              "color": "#64748b",
+              "lineStyle": "solid",
+              "markerStartShape": "none",
+              "markerEndShape": "arrowclosed",
+              "pathType": "orthogonal",
+              "strokeWidth": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "diagram_canvas/erd-ai-document-classification-service-step-4",
+      "data": {
+        "name": "STEP-4-ERD",
+        "nodes": [
+          {
+            "id": "ent-decisions",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 260,
+            "height": 180,
+            "data": {
+              "label": "decisions",
+              "shape": "entity-table",
+              "color": "#52c41a",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "decisions-id",
+                  "name": "id",
+                  "type": "TEXT",
+                  "key": "PK"
+                },
+                {
+                  "id": "decisions-sha256",
+                  "name": "sha256",
+                  "type": "TEXT",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-label",
+                  "name": "label",
+                  "type": "TEXT",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-confidence",
+                  "name": "confidence",
+                  "type": "REAL",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-review-required",
+                  "name": "review_required",
+                  "type": "INTEGER",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-text-length",
+                  "name": "text_length",
+                  "type": "INTEGER",
+                  "key": ""
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "table"
+                },
+                {
+                  "key": "step_change",
+                  "value": "added"
+                },
+                {
+                  "key": "description",
+                  "value": "Stores one classification result per processed document. Metadata and file digest only; original PDF/TXT bytes or extracted text are not stored."
+                },
+                {
+                  "key": "source",
+                  "value": "app/document_service.py: persist() CREATE TABLE IF NOT EXISTS decisions"
+                },
+                {
+                  "key": "field:id",
+                  "value": "TEXT, PK, not null, Decision UUID created by process_document."
+                },
+                {
+                  "key": "field:sha256",
+                  "value": "TEXT, not null, SHA-256 digest of input file bytes."
+                },
+                {
+                  "key": "field:label",
+                  "value": "TEXT, not null, Detected document category."
+                },
+                {
+                  "key": "field:confidence",
+                  "value": "REAL, not null, Uncalibrated keyword confidence score."
+                },
+                {
+                  "key": "field:review_required",
+                  "value": "INTEGER, not null, 0/1 flag when confidence is below 0.75."
+                },
+                {
+                  "key": "field:text_length",
+                  "value": "INTEGER, not null, Count of extracted characters."
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-legend",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 240
+            },
+            "width": 260,
+            "height": 120,
+            "data": {
+              "label": "This step's database:\ngreen = added\nPK = primary key · FK = foreign key",
+              "shape": "note",
+              "color": "#d4b106",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "config": {}
+            }
+          }
+        ],
+        "edges": [],
+        "order": 8
+      }
+    },
+    {
+      "path": "diagram_canvas/erd-ai-document-classification-service-step-5",
+      "data": {
+        "name": "STEP-5-ERD",
+        "nodes": [
+          {
+            "id": "ent-decisions",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "width": 260,
+            "height": 180,
+            "data": {
+              "label": "decisions",
+              "shape": "entity-table",
+              "color": "#8c8c8c",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "fields": [
+                {
+                  "id": "decisions-id",
+                  "name": "id",
+                  "type": "TEXT",
+                  "key": "PK"
+                },
+                {
+                  "id": "decisions-sha256",
+                  "name": "sha256",
+                  "type": "TEXT",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-label",
+                  "name": "label",
+                  "type": "TEXT",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-confidence",
+                  "name": "confidence",
+                  "type": "REAL",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-review-required",
+                  "name": "review_required",
+                  "type": "INTEGER",
+                  "key": ""
+                },
+                {
+                  "id": "decisions-text-length",
+                  "name": "text_length",
+                  "type": "INTEGER",
+                  "key": ""
+                }
+              ],
+              "nodeAttributes": [
+                {
+                  "key": "kind",
+                  "value": "table"
+                },
+                {
+                  "key": "step_change",
+                  "value": "unchanged"
+                },
+                {
+                  "key": "description",
+                  "value": "Stores one classification result per processed document. Metadata and file digest only; original PDF/TXT bytes or extracted text are not stored."
+                },
+                {
+                  "key": "source",
+                  "value": "app/document_service.py: persist() CREATE TABLE IF NOT EXISTS decisions"
+                },
+                {
+                  "key": "field:id",
+                  "value": "TEXT, PK, not null, Decision UUID created by process_document."
+                },
+                {
+                  "key": "field:sha256",
+                  "value": "TEXT, not null, SHA-256 digest of input file bytes."
+                },
+                {
+                  "key": "field:label",
+                  "value": "TEXT, not null, Detected document category."
+                },
+                {
+                  "key": "field:confidence",
+                  "value": "REAL, not null, Uncalibrated keyword confidence score."
+                },
+                {
+                  "key": "field:review_required",
+                  "value": "INTEGER, not null, 0/1 flag when confidence is below 0.75."
+                },
+                {
+                  "key": "field:text_length",
+                  "value": "INTEGER, not null, Count of extracted characters."
+                }
+              ],
+              "config": {}
+            }
+          },
+          {
+            "id": "ent-legend",
+            "type": "diagramNode",
+            "position": {
+              "x": 0,
+              "y": 240
+            },
+            "width": 260,
+            "height": 120,
+            "data": {
+              "label": "This step's database:\ngrey = unchanged\nPK = primary key · FK = foreign key",
+              "shape": "note",
+              "color": "#d4b106",
+              "emoji": "",
+              "icon": "",
+              "body": "",
+              "config": {}
+            }
+          }
+        ],
+        "edges": [],
+        "order": 9
+      }
+    }
+  ]
+}
